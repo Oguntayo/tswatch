@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>stopwatch</title>
+        {% load static %} 
+<script type="text/javascript" src="{% static '/js/work.js' %}">
+</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .grid {
+                background-color: LightYellow;
+                display: grid;
+                padding: 20px;
+                grid-column-gap: 20px;
+                grid-row-gap: 10px;
+                grid-template-columns: auto;
+                grid-template-rows: 300px 400px;
+            }
+
+            .grid-item1 {
+                 background-color:WhiteSmoke;
+                font-size: 20px;
+                padding: 20px;
+                text-align: center;
+           
+                margin: 4px 2px;
+                
+            }
+
+
+            .grid-item3 {
+                background-color: white;
+                font-size: 20px;
+                padding: 20px;
+                text-align: center;
+              
+            }
+
+            button {
+                width: 100px;
+                height: 50px;
+                margin-bottom: 2px;
+                border: 3px solid white;
+                border-radius: 50px;
+                background: #202020;
+                color: white;
+                cursor: pointer;
+                outline: none;
+           }
+           #sv{
+             width: 100px;
+                height: 50px;
+                margin-top: 20px;
+                margin-bottom: 2px;
+                border: 3px solid white;
+                border-radius: 50px;
+
+           }
+            #mil{
+                border: none;
+                background: #202020;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                height: 100px;
+                   display: NONE;
+                
+            }
+            .d{
+                    font-size:600%;
+            }
+            ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="grid">
+            <div class="grid-item1"> 
+                <div class="d">
+                    00:00:00
+                </div>
+
+            <button class="start">start</button>
+            <button class="stop">stop</button>
+            <button class="reset">reset</button>
+                  <form action="{% url 'save'  %}" method="post">
+                    {% csrf_token %}
+                    <input id="mil" type="text" name="stop" value="00:00:00"> <input type="submit" id="sv"value="save">
+                </form>
+
+            </div>
+          
+        <div class="grid-item3">  
+           <h1>HISTORY</h1>
+                <ul id="buttons">
+                    {% for history in histories %}
+                    <li> {{ history.id }}: {{ history.hour }}</li>
+                    {% endfor %}
+                </ul>
+        </div>
+        </div>
+    </body>
+</html>
