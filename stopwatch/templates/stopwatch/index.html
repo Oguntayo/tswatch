@@ -7,7 +7,28 @@
 </script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            .content {
+            .grid {
+                background-color: LightYellow;
+                display: grid;
+                padding: 20px;
+                grid-column-gap: 20px;
+                grid-row-gap: 10px;
+                grid-template-columns: auto;
+                grid-template-rows: 300px 400px;
+            }
+
+            .grid-item1 {
+                 background-color:WhiteSmoke;
+                font-size: 20px;
+                padding: 20px;
+                text-align: center;
+           
+                    height: fit-content;
+                overflow: auto;
+                margin: 4px 2px;
+                
+            }
+                .content {
             
             margin: auto;
             background: white;
@@ -26,28 +47,7 @@
             border: 3px solid #f1f1f1; 
             padding: 30px;
 
-            .grid {
-                background-color: LightYellow;
-                display: grid;
-                padding: 20px;
-                grid-column-gap: 20px;
-                grid-row-gap: 10px;
-                grid-template-columns: auto;
-                grid-template-rows: 300px 400px;
-            }
-
-            .grid-item1 {
-                 background-color:WhiteSmoke;
-                font-size: 20px;
-                padding: 20px;
-                text-align: center;
-                 height: fit-content;
-                overflow: auto;
-                margin: 4px 2px;
-                
-            }
-
-
+        }
             .grid-item3 {
                 background-color: white;
                 font-size: 20px;
@@ -77,24 +77,29 @@
 
            }
             #mil{
-            
+        
                    display: NONE;
                 
             }
-            .d{
-                    font-size:410%;
-                 width: auto;
+              .d{
+
+                    font-size:400%;
+                    width: auto;
             }
+          
             ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+ 
+
+
 
         </style>
     </head>
     <body>
-            <div id="grand">
+        <div id="grand">
 <div class="content"> 
 <div id="login_page">
         <div class="grid">
